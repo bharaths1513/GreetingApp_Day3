@@ -4,6 +4,7 @@ import java.util.concurrent.atomic.AtomicLong;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -49,5 +50,10 @@ public class GreetingController {
 	@PostMapping("/greet")
 	public String greetingMessage(@RequestBody UserDto userDto) {
 		return greetingService.gettingMessageByName(userDto);
+	}
+	
+	@GetMapping("/service/{id}")
+	public Greeting findById(@PathVariable String id) {
+		return this.greetingService.findById(Long.parseLong(id));
 	}
 }
