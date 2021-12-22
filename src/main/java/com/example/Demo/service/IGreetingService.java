@@ -1,5 +1,7 @@
 package com.example.Demo.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.example.Demo.dto.UserDto;
@@ -11,4 +13,5 @@ public interface IGreetingService {
 	Greeting greetingMessage();
 	String gettingMessageByName(UserDto userDto);
 	Greeting findById(long id);
+	List<Greeting> getMessages();
 }
