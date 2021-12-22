@@ -1,4 +1,4 @@
-package com.example.Demomodel;
+package com.example.Demo.model;
 
 public class Greeting {
 
